@@ -55,18 +55,22 @@ dependencies {
 
     implementation("androidx.activity:activity-compose:1.10.1")
     implementation("androidx.compose.compiler:compiler:1.5.2")
-    implementation("androidx.compose.material:material:1.7.8")
+    implementation("androidx.compose.material3:material3:1.3.1")
 
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
     kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     // Its necessary to keep version 2.51.1
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
     implementation("com.google.dagger:hilt-android:2.51.1")
+
+    implementation("com.opencsv:opencsv:5.10")
 
     testImplementation(libs.junit)
 
