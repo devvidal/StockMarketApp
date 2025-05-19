@@ -24,13 +24,17 @@ class CompanyListingsViewModel @Inject constructor(
 
     private var searchJob: Job? = null
 
+    init {
+        getCompanyListings()
+    }
+
     fun onEvent(event: CompanyListingsEvent) {
         when(event) {
             is CompanyListingsEvent.OnSearchQueryChange -> {
                 state = state.copy(searchQuery = event.query)
 
                 searchJob?.cancel()
-                searchJob = getCompanyListings(query = event.query, forceRefresh = true)
+                searchJob = getCompanyListings(query = event.query)
             }
             is CompanyListingsEvent.Refresh -> {
                 getCompanyListings(forceRefresh = true)
@@ -49,7 +53,7 @@ class CompanyListingsViewModel @Inject constructor(
             .onStart { state = state.copy(isLoading = true) }
             .onCompletion { state = state.copy(isLoading = false) }
             .collect { result ->
-
+                state = state.copy(companies = result.getOrNull() ?: emptyList())
             }
     }
 }

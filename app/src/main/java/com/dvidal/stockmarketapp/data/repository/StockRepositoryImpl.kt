@@ -33,7 +33,7 @@ class StockRepositoryImpl @Inject constructor(
                 return@flow
             }
 
-            runCatching { api.getListings("") }.fold(
+            runCatching { api.getListings() }.fold(
                 onSuccess = { response ->
                     val responseMapped = companyListingsParser.parse(response.byteStream())
 

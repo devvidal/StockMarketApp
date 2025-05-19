@@ -8,6 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
+import com.dvidal.stockmarketapp.presentation.company_listings.components.CompanyListingsScreen
 import com.dvidal.stockmarketapp.ui.theme.StockMarketAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,7 +23,7 @@ class MainActivity: ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Text(text = "test")
+                    CompanyListingsScreen()
                 }
             }
         }
