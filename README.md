@@ -36,4 +36,8 @@ The app is built following the **Model-View-Intent (MVI)** architecture, based o
 
 ---
 
+https://github.com/user-attachments/assets/82ed1520-d21f-467b-9250-9bc8e40a6ea4
+
+
+
 
