@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
+    id("kotlin-parcelize")
     id("com.google.dagger.hilt.android")
 }
 
@@ -58,7 +59,7 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.3.1")
 
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
     kapt("androidx.room:room-compiler:2.6.1")

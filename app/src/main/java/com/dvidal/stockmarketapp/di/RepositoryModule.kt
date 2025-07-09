@@ -2,8 +2,10 @@ package com.dvidal.stockmarketapp.di
 
 import com.dvidal.stockmarketapp.data.csv.CompanyListingsParser
 import com.dvidal.stockmarketapp.data.csv.CsvParser
+import com.dvidal.stockmarketapp.data.csv.IntradayInfoParser
 import com.dvidal.stockmarketapp.data.repository.StockRepositoryImpl
 import com.dvidal.stockmarketapp.domain.model.CompanyListing
+import com.dvidal.stockmarketapp.domain.model.IntradayInfo
 import com.dvidal.stockmarketapp.domain.repository.StockRepository
 import dagger.Binds
 import dagger.Module
@@ -20,6 +22,12 @@ abstract class RepositoryModule {
     abstract fun bindCompanyListingsParser(
         companyListingsParser: CompanyListingsParser
     ): CsvParser<CompanyListing>
+
+    @Binds
+    @Singleton
+    abstract fun bindIntradayInfoParser(
+        intradayInfoParser: IntradayInfoParser
+    ): CsvParser<IntradayInfo>
 
     @Binds
     @Singleton
